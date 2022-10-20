@@ -88,3 +88,10 @@ logBuyer("Duck typing: ", {
   lastName: "Hacedor",
   email: "jose.hacedor+test@test.com",
 });
+
+// * Excess Property Checks
+logBuyer("Excess Property Checks: ", {
+  firstName: "Phil",
+  lastName: "Faker",
+  phone: "+1 (216) 513-9999",
+} as Buyer);
