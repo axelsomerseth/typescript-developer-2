@@ -2,6 +2,7 @@ import { InvoicePersistence } from "../interfaces/InvoicePersistence";
 import { Invoice } from "./Invoice";
 import os from "os";
 
+// * Interface Implementation by class
 class FilePersistence implements InvoicePersistence {
   static getOSPlatform(): string {
     // returns the Operative System's name;
