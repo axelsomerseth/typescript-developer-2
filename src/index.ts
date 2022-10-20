@@ -1,4 +1,5 @@
 import { Category } from "./types/classes/Category";
+import { FilePersistence } from "./types/classes/FilePersistence";
 import { Product } from "./types/classes/Product";
 import { SubCategory } from "./types/classes/SubCategory";
 import {
@@ -55,3 +56,6 @@ console.log("Second transaction: ", secondTransaction);
 let code: any = 123;
 let productCode = <number>code;
 console.log("Product code type: ", typeof productCode);
+
+// * Static members
+console.log("Static members: ", FilePersistence.getOSPlatform());
