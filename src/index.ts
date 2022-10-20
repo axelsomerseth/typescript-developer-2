@@ -9,6 +9,7 @@ import {
 } from "./types/classes/Transaction";
 import { FilePersistence } from "./types/classes/FilePersistence";
 import { Buyer } from "./types/interfaces/Buyer";
+import { Staff } from "./types/interfaces/Staff";
 
 // * Categories
 const category = new Category("Meat", "Meat description", 1);
@@ -95,3 +96,27 @@ logBuyer("Excess Property Checks: ", {
   lastName: "Faker",
   phone: "+1 (216) 513-9999",
 } as Buyer);
+
+// * Indexable Types | Index Signatures
+interface StringArray {
+  [index: string]: number | string;
+  length: number;
+  name: string;
+}
+
+const valid: StringArray = {
+  length: 1,
+  name: "bob",
+  someOtherKey: "hey",
+  someOtherKey2: "bye",
+};
+
+console.log("Index Signatures: ", valid);
+
+// * Extending Interfaces
+const staffPerson1: Staff = {
+  firstName: "Eva",
+  lastName: "Luator",
+  age: 25,
+};
+console.log("Extending Interfaces: ", staffPerson1);
