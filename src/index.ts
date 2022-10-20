@@ -1,5 +1,6 @@
 import { Category } from "./types/classes/Category";
 import { Product } from "./types/classes/Product";
+import { SubCategory } from "./types/classes/SubCategory";
 import {
   Movement,
   Transaction,
@@ -8,18 +9,27 @@ import {
 
 // * Categories
 const category = new Category("Meat", "Meat description", 1);
-console.log(category);
+console.log("Category: ", category);
+
+// * Categories
+const subCategory = new SubCategory(
+  "Beef",
+  "Beef meat",
+  category.id as number,
+  1
+);
+console.log("SubCategory: ", subCategory);
 
 // * Products
 const product = new Product(
   "Strip steak",
   "Beef strip steak",
-  category.id || 0, // TODO: remove this zero
+  category.id as number,
   100,
   5,
   1
 );
-console.log(product);
+console.log("Product: ", product);
 
 // * Transactions
 const firstTransaction = new Transaction(
@@ -38,5 +48,10 @@ const secondTransaction = new Transaction(
   2,
   product.id
 );
-console.log(firstTransaction);
-console.log(secondTransaction);
+console.log("First transaction: ", firstTransaction);
+console.log("Second transaction: ", secondTransaction);
+
+// ! Type Casting or Type assertion
+let code: any = 123;
+let productCode = <number>code;
+console.log("Product code type: ", typeof productCode);
