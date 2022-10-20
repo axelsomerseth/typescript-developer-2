@@ -6,8 +6,11 @@ class Category {
   updatedAt?: Date;
   deletedAt?: Date;
 
-  constructor() {
-    this.name = "";
+  constructor(name: string, description?: string, id?: number) {
+    this.name = name;
+    this.description = description;
+    this.id = id;
+    this.createdAt = new Date();
   }
 }
 

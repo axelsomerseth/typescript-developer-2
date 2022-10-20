@@ -1,40 +1,52 @@
 enum Movement {
-  Out,
-  In,
   Invalid,
+  In,
+  Out,
 }
 
 enum TransactionTypes {
-  // Inbound transactions
-  Receipts,
-  Transfers,
+  // Inbound and outbound transactions
+  Invalid,
   Adjustments,
-  ItemsAddedThroughCycleCounts,
-  Returns,
+  Transfers,
 
-  // Outbound transactions
+  // Only Inbound transactions
+  Receipts,
+  Returns,
+  ItemsAddedThroughCycleCounts,
+
+  // Only Outbound transactions
+  Selling,
   Issues,
   ItemsRemovedThroughCycleCounts,
 }
 
 class Transaction {
   id?: number;
-  productId: number;
+  productId?: number;
   movement: Movement;
   quantity: number;
-  type: string;
+  type: TransactionTypes;
   description: string;
   createdAt?: Date;
   updatedAt?: Date;
   deletedAt?: Date;
 
-  constructor() {
-    this.productId = 0;
-    this.movement = Movement.Invalid;
-    this.quantity = 0;
-    this.type = "Invalid";
-    this.description = "";
+  constructor(
+    movement: Movement,
+    quantity: number,
+    type: TransactionTypes,
+    description: string,
+    id?: number,
+    productId?: number
+  ) {
+    this.movement = movement;
+    this.quantity = quantity;
+    this.type = type;
+    this.description = description;
+    this.id = id;
+    this.productId = productId;
   }
 }
 
-export { Transaction };
+export { Transaction, Movement, TransactionTypes };
