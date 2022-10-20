@@ -1,16 +1,15 @@
-class Category {
+import { Base } from "./Base";
+
+class Category extends Base {
   id?: number;
   name: string;
   description?: string;
-  createdAt?: Date;
-  updatedAt?: Date;
-  deletedAt?: Date;
 
   constructor(name: string, description?: string, id?: number) {
+    super();
     this.name = name;
     this.description = description;
     this.id = id;
-    this.createdAt = new Date();
   }
 }
 

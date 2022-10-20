@@ -1,11 +1,11 @@
+import { Base } from "./Base";
 import { Invoice } from "./Invoice";
 
-class InvoicePrinter {
+class InvoicePrinter extends Base {
   invoice: Invoice;
 
-  updatedAt?: Date;
-
   constructor(invoice: Invoice) {
+    super();
     this.invoice = invoice;
   }
 
@@ -19,7 +19,8 @@ class InvoicePrinter {
 		--------------------------------------------------
 		Total: ${this.invoice.total}
 		`;
-    console.log(outcome);
+    // console.log(outcome);
+    return outcome;
   }
 }
 

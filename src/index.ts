@@ -1,3 +1,4 @@
+import { Base } from "./types/classes/Base";
 import { Category } from "./types/classes/Category";
 import { FilePersistence } from "./types/classes/FilePersistence";
 import { Product } from "./types/classes/Product";
@@ -52,10 +53,17 @@ const secondTransaction = new Transaction(
 console.log("First transaction: ", firstTransaction);
 console.log("Second transaction: ", secondTransaction);
 
-// ! Type Casting or Type assertion
+// TODO: instantiate Invoice
+// TODO: instantiate InvoicePrinter
+// TODO: instantiate InvoiceEmailSender
+
+// * Type Casting or Type assertion
 let code: any = 123;
 let productCode = <number>code;
 console.log("Product code type: ", typeof productCode);
 
 // * Static members
 console.log("Static members: ", FilePersistence.getOSPlatform());
+
+// * Abstact class
+// let base = new Base(); // ! Uncomment to see: Cannot create an instance of an abstract class

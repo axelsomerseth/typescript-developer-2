@@ -1,13 +1,12 @@
-class Product {
+import { Base } from "./Base";
+
+class Product extends Base {
   id?: number;
   name: string;
   description: string;
   categoryId?: number;
   price: number;
   stock: number;
-  createdAt?: Date;
-  updatedAt?: Date;
-  deletedAt?: Date;
 
   constructor(
     name: string,
@@ -17,13 +16,13 @@ class Product {
     categoryId?: number,
     id?: number
   ) {
+    super();
     this.name = name;
     this.description = description;
     this.price = price;
     this.stock = stock;
     this.categoryId = categoryId;
     this.id = id;
-    this.createdAt = new Date();
   }
 }
 

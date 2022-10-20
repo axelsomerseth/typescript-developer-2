@@ -1,3 +1,5 @@
+import { Base } from "./Base";
+
 enum Movement {
   Invalid,
   In,
@@ -21,16 +23,13 @@ enum TransactionTypes {
   ItemsRemovedThroughCycleCounts = "ItemsRemovedThroughCycleCounts",
 }
 
-class Transaction {
+class Transaction extends Base {
   id?: number;
   productId?: number;
   movement: Movement;
   quantity: number;
   type: TransactionTypes;
   description: string;
-  createdAt?: Date;
-  updatedAt?: Date;
-  deletedAt?: Date;
 
   constructor(
     movement: Movement,
@@ -40,6 +39,7 @@ class Transaction {
     id?: number,
     productId?: number
   ) {
+    super();
     this.movement = movement;
     this.quantity = quantity;
     this.type = type;

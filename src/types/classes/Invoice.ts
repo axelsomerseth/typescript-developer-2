@@ -1,16 +1,15 @@
+import { Base } from "./Base";
 import { Product } from "./Product";
 
-class Invoice {
+class Invoice extends Base {
   products: Product[];
   subtotal: number;
   discountRate: number;
   taxRate: number;
   total: number;
-  createdAt?: Date;
-  updatedAt?: Date;
-  deletedAt?: Date;
 
   constructor() {
+    super();
     this.products = [];
     this.subtotal = 0;
     this.discountRate = 0;
