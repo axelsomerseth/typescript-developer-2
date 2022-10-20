@@ -1,6 +1,5 @@
 import { Base } from "./types/classes/Base";
 import { Category } from "./types/classes/Category";
-import { FilePersistence } from "./types/classes/FilePersistence";
 import { Product } from "./types/classes/Product";
 import { SubCategory } from "./types/classes/SubCategory";
 import {
@@ -8,6 +7,8 @@ import {
   Transaction,
   TransactionTypes,
 } from "./types/classes/Transaction";
+import { FilePersistence } from "./types/classes/FilePersistence";
+import { Buyer } from "./types/interfaces/Buyer";
 
 // * Categories
 const category = new Category("Meat", "Meat description", 1);
@@ -53,9 +54,9 @@ const secondTransaction = new Transaction(
 console.log("First transaction: ", firstTransaction);
 console.log("Second transaction: ", secondTransaction);
 
-// TODO: instantiate Invoice
-// TODO: instantiate InvoicePrinter
-// TODO: instantiate InvoiceEmailSender
+// TODO: initialize Invoice
+// TODO: initialize InvoicePrinter
+// TODO: initialize InvoiceEmailSender
 
 // * Type Casting or Type assertion
 let code: any = 123;
@@ -67,3 +68,23 @@ console.log("Static members: ", FilePersistence.getOSPlatform());
 
 // * Abstact class
 // let base = new Base(); // ! Uncomment to see: Cannot create an instance of an abstract class
+
+// * Interface initialization
+const firstCustomer: Buyer = {
+  firstName: "John",
+  lastName: "Doer",
+  email: "jonh.doer+test@test.com",
+};
+
+const logBuyer = (description: string, b: Buyer) => {
+  console.log(description, b);
+};
+
+logBuyer("Buyer Interface initialization: ", firstCustomer);
+
+// * Duck typing (structural typing)
+logBuyer("Duck typing: ", {
+  firstName: "José",
+  lastName: "Hacedor",
+  email: "jose.hacedor+test@test.com",
+});
