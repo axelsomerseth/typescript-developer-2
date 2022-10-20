@@ -6,19 +6,19 @@ enum Movement {
 
 enum TransactionTypes {
   // Inbound and outbound transactions
-  Invalid,
-  Adjustments,
-  Transfers,
+  Invalid = "Invalid",
+  Adjustments = "Adjustments",
+  Transfers = "Transfers",
 
   // Only Inbound transactions
-  Receipts,
-  Returns,
-  ItemsAddedThroughCycleCounts,
+  Receipts = "Receipts",
+  Returns = "Returns",
+  ItemsAddedThroughCycleCounts = "ItemsAddedThroughCycleCounts",
 
   // Only Outbound transactions
-  Selling,
-  Issues,
-  ItemsRemovedThroughCycleCounts,
+  Selling = "Selling",
+  Issues = "Issues",
+  ItemsRemovedThroughCycleCounts = "ItemsRemovedThroughCycleCounts",
 }
 
 class Transaction {
